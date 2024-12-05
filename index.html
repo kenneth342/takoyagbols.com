@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takoyaki Business</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h3>Submenus</h3>
+            <ul>
+                <li><a href="#" onclick="showContent('home')">HOME</a></li>
+                <li><a href="#" onclick="showContent('products')">Takoyaki Menu</a></li>
+                <li><a href="#" onclick="showContent('add-order')">ADD ORDER</a></li>
+                <li><a href="#" onclick="showContent('contact-details')">Find Us</a></li>
+                <li><a href="#" onclick="showContent('about')">About</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <div id="home" class="content-section">
+                <h1>History of Takoyaki</h1>
+                <p>Takoyaki is a popular Japanese street food that originated in Osaka in the 1930s. It is made from batter and typically filled with diced octopus, tempura scraps, pickled ginger, and green onion, cooked in a special molded pan.</p>
+            </div>
+
+            <div id="products" class="content-section hidden">
+                <h1>Welcome to our "TAKOYAKI ORDERING SITE"</h1>
+                <h1>Our Takoyaki Flavors</h1>
+                <div>
+                    <img src="Classic.jpg" alt="Classic Takoyaki" width="460">
+                    <p>Classic Takoyaki - $5</p>
+                </div>
+                <div>
+                    <img src="Cheese.jpg" alt="Cheese Takoyaki" width="460">
+                    <p>Cheese Takoyaki - $6</p>
+                </div>
+                <div>
+                    <img src="ham and cheese.jpg" alt="Ham AND Cheese Takoyaki" width="460">
+                    <p>Ham AND Cheese Takoyaki - $6</p>
+                </div>
+            </div>
+
+            <div id="add-order" class="content-section hidden">
+                <h1>Add Order</h1>
+                <form>
+                    <label for="flavor">Choose Flavor:</label>
+                    <select id="flavor" name="flavor">
+                        <option value="classic">Classic</option>
+                        <option value="cheese">Cheese</option>
+                        <option value="Ham AND Cheese">Ham And Cheese</option>
+                    </select><br><br>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="50"><br><br>
+
+                    <button type="submit" id="place-order-btn">Place Order</button>
+                </form>
+            </div>
+
+            <div id="contact-details" class="content-section hidden">
+                <h1>Contact Details and Location</h1>
+                <div class="contact-info">
+                    <p><strong>Location:</strong> CALOOCAN, METRO MANILA</p>
+                    <p><strong>Phone:</strong> +81 123-456-7890</p>
+                    <p><strong>Email:</strong> KENNETHTAKOYAKI@GMAIL.com</p>
+                </div>
+            </div>
+
+            <div id="about" class="content-section hidden">
+                <h1>PROFILE</h1>
+                <div class="developer-info">
+                    <img src="PHOTO.jpg" alt="Developer Photo" class="developer-photo">
+                    <div class="bio">
+                        <p><strong>Developer:</strong> KENNETH ALCANTARA</p>
+                        <p><strong>Business</strong> Takoyaki</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</body>
+</html>

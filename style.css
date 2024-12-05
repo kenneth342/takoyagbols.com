@@ -1,0 +1,433 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-nav {
+    background-color: #ffcc00;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    animation: slideIn 1s ease-out;
+}
+
+.top-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #c7ab0c;
+    padding: 20px;
+    width: 200px;
+    border-right: 1px solid #910f0f;
+    animation: slideInSidebar 1s ease-out;
+}
+
+.sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 100px 0; /* Adds spacing between buttons */
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #1e0783;
+    font-size: 16px;
+    display: block; /* Ensures the button takes the full width of the container */
+    padding: 15px; /* Adds padding inside the buttons */
+    background-color: #87918f; /* Optional: Background color for better visibility */
+    border-radius: 5px; /* Optional: Rounds the corners of the buttons */
+    text-align: center; /* Centers the text within the buttons */
+    transition: transform 0.3s ease; /* Button scale transition */
+}
+
+.sidebar ul li a:hover {
+    background-color: #d4d4d4; /* Optional: Changes background color on hover */
+    color: #aa0e0e; /* Optional: Darker text color on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.content {
+    padding: 20px;
+    flex: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+#products {
+    flex-direction: row; /* Align images horizontally */
+    justify-content: space-around; /* Distribute images evenly */
+    gap: 20px; /* Space between images */
+    margin-top: 20px; /* Optional: Adds margin to the top */
+}
+
+#products div {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center image and text */
+    transition: transform 0.3s ease; /* Zoom-in effect for images */
+}
+
+#products img {
+    width: 200px; /* Set width for the images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+#products p {
+    margin-top: 10px; /* Space between image and description */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#home {
+    background-color: #f4f4f9; /* Soft background color */
+    padding: 40px; /* Add padding inside the section */
+    border-radius: 10px; /* Rounded corners for the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    margin-top: 20px; /* Adds space from the top */
+    max-width: 800px; /* Limit the width of the section */
+    margin-left: auto; /* Centers the section horizontally */
+    margin-right: auto; /* Centers the section horizontally */
+    animation: fadeIn 1s ease-out; /* Fade-in effect */
+}
+
+#home h1 {
+    font-size: 36px; /* Larger font for the title */
+    font-weight: bold; /* Bold title */
+    color: #333; /* Dark text color for contrast */
+    text-align: center; /* Center align the title */
+    margin-bottom: 20px; /* Space between the title and content */
+}
+
+#home p {
+    font-size: 18px; /* Set a readable font size */
+    line-height: 1.6; /* Increase line height for better readability */
+    color: #555; /* Lighter text color for the paragraph */
+    text-align: justify; /* Justify the text for a clean look */
+    margin-bottom: 20px; /* Space between paragraph and other content */
+}
+
+#home p:last-child {
+    margin-bottom: 0; /* Remove bottom margin from the last paragraph */
+}
+
+#add-order {
+    background-color: #f8f8f8; /* Light background color */
+    padding: 30px; /* Add padding inside the form section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    margin-top: 20px; /* Adds space from the top */
+    max-width: 500px; /* Limit the width of the form */
+    margin-left: auto; /* Center the form horizontally */
+    margin-right: auto; /* Center the form horizontally */
+    animation: fadeIn 1s ease-out; /* Fade-in effect */
+}
+
+#add-order h1 {
+    font-size: 32px; /* Larger font for the title */
+    font-weight: bold; /* Bold title */
+    color: #333; /* Dark color for the title */
+    text-align: center; /* Center align the title */
+    margin-bottom: 20px; /* Space between the title and form */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    gap: 15px; /* Adds space between form elements */
+}
+
+label {
+    font-size: 18px; /* Set font size for labels */
+    color: #333; /* Dark color for labels */
+    font-weight: bold; /* Make the label text bold */
+}
+
+select, input[type="number"], button {
+    font-size: 16px; /* Set font size for inputs and button */
+    padding: 10px; /* Add padding inside inputs and button */
+    border-radius: 5px; /* Rounded corners for inputs and button */
+    border: 1px solid #ccc; /* Light border for inputs and button */
+    width: 100%; /* Make inputs and button take full width */
+    background-color: #fff; /* White background for inputs */
+}
+
+select:focus, input[type="number"]:focus, button:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #ffcc00; /* Highlight border color when focused */
+}
+
+button {
+    background-color: #ffcc00; /* Yellow background for the button */
+    color: #fff; /* White text color */
+    font-weight: bold; /* Make button text bold */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+button:active {
+    background-color: #cc9900; /* Even darker yellow when clicked */
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Removes spinner in Webkit browsers */
+}
+
+#contact-details {
+    background-color: #f4f4f4; /* Light background color */
+    padding: 30px; /* Adds padding inside the section */
+    border-radius: 10px; /* Rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow around the section */
+    max-width: 600px; /* Limits the maximum width */
+    margin: 30px auto; /* Centers the section on the page */
+    animation: fadeIn 1s ease-out; /* Fade-in effect */
+}
+
+#contact-details h1 {
+    color: #1e0783; /* Dark blue color for the heading */
+    font-size: 32px; /* Increases the size of the heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    text-align: center; /* Centers the heading */
+}
+
+.contact-info {
+    font-size: 18px; /* Increases text size */
+    color: #333; /* Dark text color */
+    line-height: 1.6; /* Increases line spacing for better readability */
+}
+
+.contact-info p {
+    margin: 10px 0; /* Adds space between paragraphs */
+}
+
+.contact-info strong {
+    font-weight: bold;
+    color: #1e0783; /* Matches the heading color for consistency */
+}
+
+#contact-details p {
+    text-align: center; /* Centers the paragraph content */
+    font-size: 16px; /* Adjusts the size for the phone and email */
+}
+
+/* Style for the About Developer section */
+#about {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeIn 1s ease-out; /* Fade-in effect */
+}
+
+#about h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.developer-info {
+    display: flex;
+    flex-direction: row; /* Align photo and bio side by side */
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between photo and bio */
+    animation: slideIn 1s ease-out; /* Slide-in effect */
+}
+
+.developer-photo {
+    width: 200px; /* Adjust the width of the developer's photo */
+    height: 200px; /* Ensure the height matches */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image doesn't stretch */
+    border: 5px solid #ddd; /* Border around the photo */
+}
+
+.bio {
+    text-align: left;
+    max-width: 500px; /* Limiting the width of the bio */
+}
+
+.bio p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.bio p strong {
+    color: #333;
+}
+
+#about p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .developer-info {
+        flex-direction: column; /* Stack the photo and bio vertically on smaller screens */
+        align-items: center;
+    }
+
+    .developer-photo {
+        width: 150px; /* Smaller photo size on mobile */
+        height: 150px;
+    }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInSidebar {
+    0% {
+        transform: translateX(-200px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+#products {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 40px; /* Padding around the section */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 1200px; /* Max width for a neat look */
+    margin: 30px auto; /* Centering the section */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeIn 1s ease-out; /* Fade-in effect */
+}
+
+#products h1, #products h2 {
+    text-align: center; /* Center align the titles */
+    color: #000000; /* Dark blue color */
+    font-family: 'Arial', sans-serif;
+}
+
+#products .section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#products .section-subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: space-around; /* Space between the items */
+    flex-wrap: wrap; /* Wrap items if the screen is too small */
+    gap: 20px; /* Space between products */
+    animation: slideIn 1s ease-out; /* Slide-in effect */
+}
+
+.product {
+    display: flex;
+    flex-direction: column; /* Align image and text vertically */
+    align-items: center;
+    background-color: #fff; /* White background for each product */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for the product cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+    transition: transform 0.3s ease; /* Smooth scale effect */
+    width: 250px; /* Fixed width for each product */
+    text-align: center; /* Center the text inside */
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+    transition: transform 0.3s ease; /* Zoom effect on image hover */
+}
+
+.product p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.product:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+.product img:hover {
+    transform: scale(1.1); /* Zoom-in effect for the image */
+}
+
+@media (max-width: 768px) {
+    #products {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+
+    .product-container {
+        justify-content: center; /* Center products on smaller screens */
+    }
+
+    .product {
+        width: 100%; /* Make products take full width on smaller screens */
+        max-width: 300px; /* Max width for each product */
+    }
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
